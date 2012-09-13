@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{eurosym}
+
+\title{Econometrics Homework 1}
+\author{Tom Augspurger}
+
+\begin{document}
+\maketitle
+
+\textbf{1. Show that $E_{X}[E[g(Y)|X]] = E[g(Y)]$.}\\
+
+If $g_{2}(y|x)$ is the conditional expectation of $y$ given $x$ and $f_{1}(x)$ is the marginal distribution of $x$, then
+\begin{align*}
+    E_{X}[E[g(Y)|X]] &= \sum_{i}E[g(Y)]f_{1}(x_{i})\\
+    &= \sum_{i} f_{1}(x_{i})\sum_{j}g_{2}(y_{j}|x_{i})g(y_{j})\\
+    &= \sum_{i} \sum_{j} g_{2}(y_{j}|x_{i})g(y_{j})f_{1}(x_{i})\\
+    &= \sum_{i} \sum_{j} f(x_{i}, y_{j})g(y_{j}) = E[g(Y)]
+\end{align*}
+
+\textbf{2.} Let X = Male Earnings; Y = Female Earnings. Z = X + Y\\
+We're given that
+$E(X) = \$40,000$; $E(Y) = \$45,000$ and $\sigma_{X} = \$12,000$; $\sigma_{Y} = \$18,000$;\\
+
+\textbf{a:} The mean of Z is $ E(Z) = E(X) + E(Y) = \$85,000$\\
+
+\textbf{b:} The covariance of male and female earnings is $C(X, Y)$.  We know that
+$
+    \rho(X, Y) = \frac{\sigma_{XY}}{\sigma_{X}\sigma_{Y}} = 0.8
+$ so $\sigma_{XY} = 0.8 \sigma_{X}\sigma_{Y} = \$172,800,000.$\\
+
+\textbf{c:}  The standard deviation of $Z$ is 
+    \begin{align*}
+        \sigma_{Z} &= \sigma_{X + Y}\\
+        &= \sqrt{V(X) + V(Y) + 2 C(X, Y)}\\
+        &= \sqrt{\$345,600,030}\\
+        &= \$ 25,314.03
+    \end{align*}
+    
+\textbf{d:}  In Euros
+$E(X) =\ $\EUR${68,850}$\\
+
+$C(X,Y) =\ $\EUR${139,968,000}$\\
+
+$\sigma_{Z} =\ $\EUR${2,050.44}$\\
+    
+\textbf{3.} $Y_{1}$ is the value of sales and $Y_{2}$ is the value of the costs. Assume that
+
+\begin{equation*}
+\ \  f_{1}(y_{1}) =
+    \begin{cases}
+         \frac{1}{6} y_{1}^{3}e^{-y_{1}} & \text{if } y_{1} > 0 \\
+         0 & \text{if } y_{1} \leq 0
+    \end{cases}
+\end{equation*}
+
+\begin{equation*}
+f_{2}(y_{2}) =
+    \begin{cases}
+         \frac{1}{2} e^{- \frac{y_{2}}{2}} & \ \ \ \ \ \text{if } y_{2} > 0 \\
+         0 & \ \ \ \ \ \text{if } y_{2} \leq 0
+    \end{cases}
+\end{equation*}
+
+and let $\Pi = Y_{1} - Y_{2}$.\\
+
+\textbf{a:} $E[\Pi] = E[Y_{1}] - E[Y_{2}] = \frac{1}{6} \int_{0}^{\infty} y_{1} y_{1}^{3} e^{-y_{1}} \, dy - \frac{1}{2} \int_0^\infty y_{2} e^{- \frac{y_{2}}{2}} \, dy\\ = 4 - 2 = 2$\\
+
+\textbf{b:} $V(\Pi) = E(\Pi^{2}) - E^{2}(\Pi) = 20 - 8 - 4 = 8$\\
+
+\textbf{c:} We would expect negative profits to be observed since $E(\Pi) - V(\Pi) < 0$.\\
+First note that since $Y_{1}$ and $Y_{2}$ are independent $f(y_{1}, y_{2}) = f_{1}(y_{1})f_{2}(y_{2}) = \frac{1}{12}y_{1}^{3}exp[-y_{1} - \frac{y_{2}}{2}]$. So,
+
+\begin{align*}
+    Pr(Y_{1} < Y_{2}) &= \int_0^\infty \int_0^{y_{2}} f(y_{1}, y_{2}) \, dy_{1} \, dy_{2}\\
+    &= \int_0^\infty \int_0^{y_{2}} \frac{1}{12}y_{1}^{3}exp[-y_{1} - \frac{y_{2}}{2}] \, dy_{1} \, dy_{2}\\
+    &= \frac{16}{81} \approx .197531
+\end{align*}
+
+\textbf{4. Employment Status and College Graduation}
+
+\textbf{a:} $E(Y|X = x) = \sum_{i} y_{i} Pr(Y = y_{i}|X = x)$ so\\
+
+$E(Y|X = 0) = \frac{0.37}{0.659} 0 + \frac{0.622}{0.659} 1 \approx 0.9439$\\
+
+$E(Y|X = 1) = \frac{0.009}{0.341} 0 + \frac{0.332}{0.341} 1 \approx 0.9736$\\
+
+\textbf{b:} Find $E^{*}(Y|X) = \alpha + \beta X$
+
+\begin{align*}
+    \beta &= \frac{C(X, Y)}{V(X)}\\
+    &= \frac{E(XY) - E(X)E(Y)}{V(X)}\\
+    &= \frac{\sum_{i} \sum_{j} f(x_{i}y_{j})x_{i}y_{j} - E(X)E(Y)}{E(X^{2}) - E^{2}(X)}\\
+    &= \frac{0.332 - (0.341)(0.954)}{.341 - .116281}\\
+    &= \frac{.00669}{.22472} \approx .02977
+\end{align*}
+
+so 
+\begin{align*}
+    \alpha &= E(Y) - \beta E(X)\\
+    &= .9540 - (.02977)(.341) \approx .94385
+\end{align*}
+
+Thus, $E^{*}[Y|X] = 0.94385 + .02977X$\\
+
+\textbf{c:} $E[Y|X]$ and $E^{*}[Y|X]$ are the same at the two points they are both defined, $X = 0$ and $X = 1$.\\
+
+\textbf{5.}  I've assumed that the question is asking for a simple regression between average hourly earnings and age, so I haven't controlled for any gender or education in my analysis below.  The regression equation is 
+\[
+AHE = 2.6235 + .4285 * AGE
+\]
+where AHE is the mean hourly earnings of a worker, in dollars, and AGE is the years a person has lived.  On average, mean earnings of a worker increase by about \$0.4285 per year lived.  The relationship is statistically significant at the 10\%, 5\%, and 1\% levels with a t-statistic of 16.850 and a p-value of about 0.000.  So we conclude that the slope on the AGE variable, ($\beta_{1}$), is significantly different than zero.
+
+A 95\% confidence interval around $\beta_{1}$ is (0.379, 0.478) \$/year lived.  Note that zero is not contained in this confidence interval.
+
+The averaged-aged worker in the sample is about 29.64 years old.  So his predicted earnings is $2.6235 + .4285(29.64)$ or about \$40.20.
+
+Age alone does not seem to account for much of the variance in earnings across individuals with an $R^{2}$ of 1.8\%.
+
+If the variables gender and education are also used, the regression equation becomes
+\begin{equation*}
+    AHE = .0819 + 6.9360 * Education -2.8045 * Gender + .4530 * Age
+\end{equation*}
+where Education and Gender are dummy variables (B.A. = 1, Female = 1).  All variables are significant at the 1\% level, except for the constant (which isn't economically meaningful anyway).  A 95\% confidence interval for the slope on the Age variable, once education and gender have been controlled for, is (0.407, 0.499) dollars per year.
+\end{document}
