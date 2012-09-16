@@ -29,23 +29,20 @@ model1 = sm.OLS(endog, growthData[exog1])
 results1 = model1.fit()
 
 # 2: tradeshare and log(yearsschool)
-exog2 = ['const', 'tradeshare']
-exog2 = growthData[exog2]
+exog2 = growthData[['const', 'tradeshare']]
 exog2['logSchool'] = np.log(growthData['yearsschool'])
 model2 = sm.OLS(endog, exog2)
 results2 = model2.fit()
 
 # 3: tradeshare, rev_coups, assasinations, logSchool, logRgdp60
-exog3 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
-exog3 = growthData[exog3]
+exog3 = growthData[['const', 'tradeshare', 'rev_coups', 'assasinations']]
 exog3['logSchool'] = np.log(growthData['yearsschool'])
 exog3['logRgdp60'] = np.log(growthData['rgdp60'])
 model3 = sm.OLS(endog, exog3)
 results3 = model3.fit()
 
 # 4: tradeshare, rev_coups, assasinations, logSchool, logRgdp60, tradeLnSchool
-exog4 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
-exog4 = growthData[exog4]
+exog4 = growthData[['const', 'tradeshare', 'rev_coups', 'assasinations']]
 exog4['logSchool'] = np.log(growthData['yearsschool'])
 exog4['logRgdp60'] = np.log(growthData['rgdp60'])
 exog4['tradeLnSchool'] = growthData['tradeshare'] * np.log(growthData['tradeshare'])
@@ -53,8 +50,7 @@ model4 = sm.OLS(endog, exog4)
 results4 = model4.fit()
 
 # 5: tradeshare, rev_coups, assasinations, tradeSquared, tradeCubed, logSchool, logRgdp60
-exog5 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
-exog5 = growthData[exog5]
+exog5 = growthData[['const', 'tradeshare', 'rev_coups', 'assasinations']]
 exog5['tradeSquared'] = growthData['tradeshare']**2
 exog5['tradeCubed'] = growthData['tradeshare']**3
 exog5['logSchool'] = np.log(growthData['yearsschool'])
