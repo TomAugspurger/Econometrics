@@ -7,11 +7,14 @@ import statsmodels.api as sm
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
 """
 cd /Users/tom/Dropbox/Economics/Econometrics/Homework/HW3
 """
+
+os.chdir('/Users/tom/Economics/Econometrics/Homework/HW3')
 growthData = sm.iolib.foreign.genfromdta('Growth.dta')
 growthData = sm.add_constant(growthData, prepend = True)
 growthData = pd.DataFrame(growthData)
@@ -32,7 +35,7 @@ exog2['logSchool'] = np.log(growthData['yearsschool'])
 model2 = sm.OLS(endog, exog2)
 results2 = model2.fit()
 
-# 3: tradeshare, log(yearsschool), rev_coups, assasinations, log(rgdp60)
+# 3: tradeshare, rev_coups, assasinations, logSchool, logRgdp60
 exog3 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
 exog3 = growthData[exog3]
 exog3['logSchool'] = np.log(growthData['yearsschool'])
@@ -40,7 +43,7 @@ exog3['logRgdp60'] = np.log(growthData['rgdp60'])
 model3 = sm.OLS(endog, exog3)
 results3 = model3.fit()
 
-# 4: tradeshare, log(yearsschool), rev_coups, assasinations, log(rgdp60), tradeshare * log(yearsschool)
+# 4: tradeshare, rev_coups, assasinations, logSchool, logRgdp60, tradeLnSchool
 exog4 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
 exog4 = growthData[exog4]
 exog4['logSchool'] = np.log(growthData['yearsschool'])
@@ -49,7 +52,7 @@ exog4['tradeLnSchool'] = growthData['tradeshare'] * np.log(growthData['tradeshar
 model4 = sm.OLS(endog, exog4)
 results4 = model4.fit()
 
-# 5: tradeshare, tradeshare**2, tradeshare**3, log(yearsschool), rev_coups, assasinations, log(rgdp60)
+# 5: tradeshare, rev_coups, assasinations, tradeSquared, tradeCubed, logSchool, logRgdp60
 exog5 = ['const', 'tradeshare', 'rev_coups', 'assasinations']
 exog5 = growthData[exog5]
 exog5['tradeSquared'] = growthData['tradeshare']**2
@@ -62,6 +65,7 @@ results5 = model5.fit()
 # Part a
 plt.figure()
 scatter1 = pd.tools.plotting.scatter_plot(growthData, 'tradeshare', 'growth')
+plt.savefig('/Users/tom/Economics/Econometrics/Homework/HW3/tradeGrowthScatter.png', dpi = 300)
 
 # Part b
 results1.params['yearsschool'] * 2
