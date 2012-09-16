@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{array}
+\usepackage{graphicx}
 
 \title{Econometric Homework 2}
 \author{Tom Augspurger}
@@ -115,8 +116,9 @@ $\sqrt{n}(U - \lambda) \thicksim\!\!\!\!\!\!\!^{{}^{\textrm{ D}}} N(0, [U'(\thet
 
 $Pr(U \leq 5/2)$ normalizes to the probability that Z is less than $c^{*} = \sqrt{n}(\frac{5/2 - \mu}{\sigma}) = 4(\frac{(5/2 - 2)}{(1/2)}) = 1$.  From a standard normal table (or integration) we find that this is 0.8413.
 
-\textbf{d.)}
+\textbf{d.)}  For the exact $Pr(U \leq 5/2)$ first note that if $X \thicksim exp(\lambda)$ then $W \thicksim \chi^{2}(2n)$ where $W = 2n\lambda \overline{X}$.  So here we have that $W \thicksim \chi^{2}(32)$ and $W = 64\overline{X}$ or $\overline{X} = (1/64)W$
 
+We want $Pr(U \leq 5/2) = Pr(1/ \overline{X} \leq 5/2) = Pr(\overline{X} \geq 2/5).$  Now substituting in $W$: $Pr(\overline{X} \geq 2/5) = Pr(W \geq 25.6) = .7810$\\
 
 
 \textbf{Problem 5:}  The following table contains the results from a Monte Carlo simulation.  $X$ is a sample of 100 draws from a uniform distribution over $[0, 10]$. $Y$ is draw from a conditional distribution given by $E[Y_{i}|x_{i}] = 10 - x_{i}$, with a conditional variance of 25 for every $x_{i}$ (homoskedasticity).  $\overline{X}$ is the sample mean for the independent variable, $\overline{Y}$ is the mean of the sample means for the dependent variable.  That is the mean of the unconditional expectation of $Y$ over the 1000 simulations.  $\beta_{0}$ is the coefficient on the intercept and $beta_{1}$ is the coefficient on $X$. Finally, we have $s^{2}$, the conditional variance.
@@ -137,8 +139,10 @@ $Pr(U \leq 5/2)$ normalizes to the probability that Z is less than $c^{*} = \sqr
 
 So we can see that the Monte Carlo simulation approximates the population distribution well.
 
-
-
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale = 0.5]{HW2Histograms}
+\end{figure}
 
 
 

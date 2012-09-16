@@ -5,13 +5,12 @@ from uniformRV import uniformRV
 import statsmodels.api as sm
 
 # To do: Calculate yHat (in or out of for loop?) and find s^2, the variance of predictions.
-def coeffEst(x, n, N):
+def coeffEst(x, N):
     """
     Estimates the coefficients from a simple regression between two vectors.
     
     Parameters
     -x is the independent variable. e.g. a sample drawn from a uniform distribution
-    -n is the length of the regression variables. In the HW n = 100.
     -N is the length of the resulting output vector. The number of iterations.  1000 in the HW.
     
     -n is taken from the uniformRV variable, the length of our independent random vector.
@@ -23,7 +22,7 @@ def coeffEst(x, n, N):
     Need to build in handling for if x has a constant column or not.
     Need to check on if s^2 = mse_model or something else.
     """
-    y = np.empty(n, dtype = float)
+    y = np.empty(len(x), dtype = float)
     b = np.empty(5 * N, dtype = float)
     b = b.reshape(N, 5)
     yHat = np.empty(N, dtype = float) #Not using yet

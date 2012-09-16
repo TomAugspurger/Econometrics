@@ -41,7 +41,7 @@ print(datetime.now()-startTime)
 # Regression and Calculations
 model = sm.regression.linear_model.OLS(AHE, age)
 results = model.fit()
-averageEarnings = results.predict(np.mean(age))
+averageEarnings = results.predict(np.mean(age[:, 0]))
 averageEarnings = averageEarnings[1]
 x = results.conf_int()
 low = x[0, 0]

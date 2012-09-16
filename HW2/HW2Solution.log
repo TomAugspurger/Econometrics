@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.8.31)  12 SEP 2012 16:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.8.31)  13 SEP 2012 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -112,52 +112,155 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip47
 \backup@length=\skip48
 )
-(./HW2Solution.aux)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/latexconfig/graphics.c
+fg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/infwarerr.s
+ty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+) (./HW2Solution.aux)
 \openout1 = `HW2Solution.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen116
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen117
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks22
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.
+sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/ifluatex.st
+y
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/oberdiek/epstopdf-base
+.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/kvdefinekey
+s.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.s
+ty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/generic/oberdiek/etexcmds.st
+y
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/latexconfig/epstopdf-s
+ys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for U+msa on input line 11.
 
 (/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 
 (/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
@@ -165,57 +268,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
 {/Volumes/HDD/usr/local/texlive2012/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 59.
  (/Volumes/HDD/usr/local/texlive2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
  []
 
-[2] [3] (./HW2Solution.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[2] <HW2Histograms.png, id=23, 578.16pt x 433.62pt>
+File: HW2Histograms.png Graphic file (type png)
+ <use HW2Histograms.png>
+Package pdftex.def Info: HW2Histograms.png used on input line 144.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+[3 <./HW2Histograms.png>] (./HW2Solution.aux) ) 
 Here is how much of TeX's memory you used:
- 1197 strings out of 493488
- 14090 string characters out of 3136640
- 70834 words of memory out of 3000000
- 4534 multiletter control sequences out of 15000+200000
+ 2451 strings out of 493488
+ 33520 string characters out of 3136640
+ 94068 words of memory out of 3000000
+ 5723 multiletter control sequences out of 15000+200000
  10440 words of font info for 40 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 27i,10n,24p,726b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
-</Volumes/HDD/usr/local/texlive2012/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx10.pfb></Volumes/HDD/usr/local/texlive2012/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Volumes/HDD/usr/local/texliv
-e2012/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></Volumes/HDD/us
-r/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Volu
-mes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
-fb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb></Volumes/HDD/usr/local/texlive2012/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Volumes/HDD/usr/local/texlive2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Volumes/HDD/usr/local/
-texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Volumes/HDD/
-usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Vol
-umes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on HW2Solution.pdf (3 pages, 144259 bytes).
+ 37i,10n,24p,727b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
+</Volumes/HDD/usr/local/texlive2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Volumes/HDD/usr/loca
+l/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Volumes/HD
+D/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
+b></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></Volumes/HDD/usr/local/texlive2012/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Volumes/HDD/usr/local/texlive
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Volumes/HDD/usr/loca
+l/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Volumes/HDD/
+usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Volu
+mes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
+Output written on HW2Solution.pdf (3 pages, 180542 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
