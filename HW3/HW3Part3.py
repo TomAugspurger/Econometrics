@@ -17,5 +17,6 @@ with open('line.csv', 'rU') as f:
         
 line.pop(0)
 line = pd.DataFrame(line)
+line.columns = ['y1', 'y2']
 
 logLike = lambda x: - x * sum(line[0])
