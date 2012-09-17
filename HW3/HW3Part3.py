@@ -18,5 +18,11 @@ with open('line.csv', 'rU') as f:
 line.pop(0)
 line = pd.DataFrame(line)
 line.columns = ['y1', 'y2']
+line = sm.add_constant(line, prepend = True)
+results = sm.GLM(line['y1'], exog = line[['const', 'y2']])
+# http://statsmodels.sourceforge.net/stable/dev/generated/statsmodels.base.model.GenericLikelihoodModel.html
+# http://statsmodels.sourceforge.net/stable/dev/generated/statsmodels.base.model.LikelihoodModel.fit.html
 
-logLike = lambda x: - x * sum(line[0])
+grid = np.linsapce(0.5, 1.5, num = 1000)
+
+# logLike = lambda x: - x * sum(line[0])
