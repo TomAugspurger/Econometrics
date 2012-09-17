@@ -7,7 +7,6 @@ from monte_carlo import monte_carlo
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 import pylab as py
-from datetime import datetime
 import npkde
 
 '''
@@ -18,8 +17,6 @@ Project is structured as
     collect the results here, by calling monte_carlo from monte_carlo.py
     Plotting/analysis from this script
 '''
-startTime = datetime.now()
-
 low, high, n = (0, 10, 100)
 x = uniformRV(low, high, n)
 x = sm.tools.tools.add_constant(x, prepend = True)
@@ -63,6 +60,5 @@ axarr[0].set_xlabel('Beta 0')
 axarr[1].set_xlabel('Beta 1')
 axarr[0].set_ylabel('')
 py.suptitle('Normed Histograms for Coefficient Distribution')
-print(datetime.now()-startTime)
 
 plt.show()
