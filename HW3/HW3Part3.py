@@ -26,3 +26,9 @@ results = sm.GLM(line['y1'], exog = line[['const', 'y2']])
 grid = np.linsapce(0.5, 1.5, num = 1000)
 
 # logLike = lambda x: - x * sum(line[0])
+
+###
+# In R now
+
+mydata = read.csv('/Users/tom/Desktop/line.csv')
+mydata[c('y1', 'y2')]
