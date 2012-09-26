@@ -44,7 +44,21 @@ with open('line.csv', 'rU') as f:
         line.append(row)
 
 line.pop(0)
-data = pd.DataFrame(line).astype('float')
+data = pd.DataFrame(line, columns = ['y1', 'y2']).astype('float')
+y = data['y1']
+x = data['y2']
+
+cef = lambda t: ((1/t) + x)
+error = lambda t: y - ((1/t) + x)
+
+results = np.zers(3, 100)
+for i in range(len(grid)):
+    results[:, i] = ss.lognorm.fit(error(grid[i]))
+
+# sorted = data['y1'] - data['y2'] >= 0
+# sorted.sort()
+# data['truth'] = sorted
+# data.sort
 
 # str2float(line, data)
 # data = np.array(data)
@@ -64,3 +78,12 @@ data = pd.DataFrame(line).astype('float')
 # 
 # mydata = read.csv('/Users/tom/Desktop/line.csv')
 # mydata[c('y1', 'y2')]
+
+### BLP Estimation
+
+x = sm.add_constant(x, prepend='True')
+model = sm.OLS(y, x)
+results = model.fit()
+print results.summary()
+
+results.summary

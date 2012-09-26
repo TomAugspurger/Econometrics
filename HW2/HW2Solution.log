@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.8.31)  13 SEP 2012 17:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.8.31)  25 SEP 2012 23:47
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **HW2Solution.tex
@@ -326,7 +326,7 @@ mes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb></Volumes/HDD/usr/local/texlive2012/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on HW2Solution.pdf (3 pages, 180542 bytes).
+Output written on HW2Solution.pdf (3 pages, 180564 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
