@@ -5,11 +5,6 @@ import pandas as pd
 import csv
 import numpy as np
 
-def str2float(list, out):
-    for i in range(1, len(list)):
-        for j in range(0, len(line[0])):
-            out.append(float(line[i][j]))
-
 def loglike4(x, theta):
     np.sum(np.log(theta * x[i] + 1) / (theta**3))
 

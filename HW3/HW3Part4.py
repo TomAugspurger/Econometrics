@@ -14,7 +14,6 @@ import os
 cd /Users/tom/Dropbox/Economics/Econometrics/Homework/HW3
 """
 
-os.chdir('/Users/tom/Economics/Econometrics/Homework/HW3')
 growthData = sm.iolib.foreign.genfromdta('Growth.dta')
 growthData = sm.add_constant(growthData, prepend = True)
 growthData = pd.DataFrame(growthData)
@@ -59,8 +58,7 @@ model5 = sm.OLS(endog, exog5)
 results5 = model5.fit()
 
 # Part a
-plt.figure()
-scatter1 = pd.tools.plotting.scatter_plot(growthData, 'tradeshare', 'growth')
+plt.figure(); scatter1 = pd.tools.plotting.scatter_plot(growthData, 'tradeshare', 'growth')
 plt.savefig('/Users/tom/Economics/Econometrics/Homework/HW3/tradeGrowthScatter.png', dpi = 300)
 
 # Part b
