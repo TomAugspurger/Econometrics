@@ -1,0 +1,90 @@
+# IPython log file
+from __future__ import division
+
+1041. + 801. + 531
+#_ + 12000
+import numpy as np
+from numpy import linalg
+Q = np.array([1/np.sqrt(6.), 2/np.sqrt(5.), 1/np.sqrt(30.), -2/np.sqrt(6.), 1/np.sqrt(5.), -2/np.sqrt(30.), 1/np.sqrt(6), 0, -5/np.sqrt(30.)])
+Q = Q.reshape(3,3)
+Q
+linalg.det(Q)
+20/(np.sqrt(6)*np.sqrt(5)*np.sqrt(30))
+28/(np.sqrt(6)*np.sqrt(5)*np.sqrt(30))
+30/(np.sqrt(6)*np.sqrt(5)*np.sqrt(30))
+linalg.inv(Q)
+-5/np.sqrt(30) * -1
+-5/(np.sqrt(5)*np.sqrt(30))
+Q.T
+A1 =np.array([[4, 2],[2, 1]])
+A1
+linalg.eig(A1)
+
+linalg.eig(A1)[1]
+linalg.eig(A1)[1][:,1]
+linalg.eig(A1)[1][:,0]
+v1 = linalg.eig(A1)[1][:,0]
+v1 * A1
+A1.dot(v1)
+v1.dot(A1)
+A2 = np.array([[4, -1, 1],[-1, 4, -1],[1, -1, 4]])
+A2
+linalg.det(A2)
+linalg.eig(A2)
+eig = linalg.eig(A2)
+eig[1][0].dot(eig[1][1]
+)
+eig[1][0].dot(eig[1][2]
+)
+eig[1][:,0].dot(eig[1][:,1]
+)
+eig[1][:,0].dot(eig[1][:,2]
+)
+eig[1][:,1].dot(eig[1][:,2]
+)
+get_ipython().magic(u'cd ~/Economics/Econometrics/Homework/HW4')
+get_ipython().magic(u'logstart HW4_log0')
+A2 = np.array([[4, -1, 1],[-1, 4, -1],[1, -1, 4]])
+eig = linalg.eig(A2)
+eig[1][:,0].dot(eig[1][:,1]
+)
+eig[1][:,0].dot(eig[1][:,2]
+)
+#b
+linalg.matrix_rank(A2)
+linalg.det(A2)
+eig[0]
+eig[0][1] * eig[0][2] * eig[0][0]
+np.prod(eig[0])
+#d
+np.sum(eig[0])
+A2.trace()
+#e
+linalg.eig(A2**2)
+eig ** 2
+eig[0]**2
+eig[1]**2
+eig[0].dot(eig[0])
+linalg.eig(A2.dot(A2))
+eig[0]
+eig
+#f
+linalg.eig(linalg.inv(A2))
+1 / eig[0]
+#4
+B1 = np.array([[2, -2, 2, 1], [-1, 3, 0, 3], [0, 0, 4, -2], [0, 0, 2, 01]])
+B2 = np.array([[1, 0, -2], [0, 0, 0], [-2, 0, 4]])
+B1
+B2
+B1 = np.array([[2, -2, 2, 1], [-1, 3, 0, 3], [0, 0, 4, -2], [0, 0, 2, -1]])
+B1
+linalg.eig(B1)
+linalg.eig(B2)
+B_eig = linalg.eig(B2)
+B_eig
+linalg.inv(B_eig[1]).dot(B1).dot(B_eig[1])
+linalg.inv(B_eig[1]).dot(B1)
+B_eig[1]
+linalg.inv(B_eig[1])
+_.dot(B1)
+get_ipython().magic(u'logoff')

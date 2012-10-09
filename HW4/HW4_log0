@@ -1,0 +1,26 @@
+# IPython log file
+
+get_ipython().magic(u'cd /Users/tom/Economics/International\\ Trade/Term\\ Paper')
+get_ipython().magic(u'pwd ')
+get_ipython().system(u'ls -F ')
+get_ipython().magic(u'cd data')
+get_ipython().magic(u'pwd ')
+B2
+get_ipython().magic(u'pwd ')
+get_ipython().magic(u'cd ~/Economics/Econometrics/Homework/HW4')
+get_ipython().magic(u'run HW4_log0')
+B2
+get_ipython().magic(u'run HW4_log0')
+get_ipython().magic(u'run HW4_log0.py')
+get_ipython().magic(u'run HW4_log0')
+B2
+import numpy as np
+from numpy import linalg
+B1 = np.array([[2, -2, 2, 1], [-1, 3, 0, 3], [0, 0, 4, -2], [0, 0, 2, 01]])
+B2 = np.array([[1, 0, -2], [0, 0, 0], [-2, 0, 4]])
+B1
+B2
+B1 = np.array([[2, -2, 2, 1], [-1, 3, 0, 3], [0, 0, 4, -2], [0, 0, 2, -1]])
+B1
+B_eig = linalg.eig(B2)
+B_eig
