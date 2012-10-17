@@ -5,7 +5,8 @@ Tom Augspurger
 from __future__ import division
 
 import numpy as np
-from numpy import linalg
+import scipy as sp
+from scipy import linalg
 
 
 cd ~/Economics/Econometrics/Homework/HW4
@@ -58,10 +59,11 @@ B2_eig[1].T.dot(B2).dot(B2_eig[1]) #Symmetric B2 so this forumula gives the diag
 
 
 # Number 5
+A = np.array([[2, 4, 3],
+              [4, 8, 6],
+              [3, 6, 4]])
+
+
 # part b
 
-A = np.array([
-             [2, 4, 3],
-             [4, 8, 6],
-             [3, 6, 5]])
              
