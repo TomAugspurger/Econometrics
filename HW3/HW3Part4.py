@@ -9,7 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-
 """
 cd /Users/tom/Dropbox/Economics/Econometrics/Homework/HW3
 """
@@ -48,7 +47,7 @@ exog4['tradeLnSchool'] = growthData[
                         'tradeshare'] * np.log(growthData['tradeshare'])
 model4 = sm.OLS(endog, exog4)
 results4 = model4.fit()
-◊◊
+
 '''
 5: tradeshare, rev_coups, assasinations, tradeSquared, tradeCubed, logSchool, logRgdp60
 '''
@@ -72,7 +71,7 @@ results2.params['logSchool'] * np.log(2)
 # Part c
 A = [[0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0]]  # rev_coups and assasinations are 3rd and 4th
 print results3.f_test(A)  # Non-robust
-R = sm.stats.sandwich_covariance.cov_white_simple(results3)◊
+R = sm.stats.sandwich_covariance.cov_white_simple(results3)
 print results3.f_test(A, cov_p=R)  # Robust
 
 # Part d
@@ -80,8 +79,8 @@ print results4.HC0_se['tradeshare']
 
 # Part e
 print results5.HC0_se[['tradeSquared', 'tradeCubed']]
-print "No, but this may not be the appropriate model.
-Controlling for everything simultaneously may mask the result."
+print "No, but this may not be the appropriate model."
+print "Controlling for everything simultaneously may mask the result."
 
 # Part f
 results3.params['tradeshare'] * .5
