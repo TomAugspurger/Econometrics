@@ -36,10 +36,12 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-HW3/Screen Shot 2012-09-27 at 8.36.21 AM.png
-HW3/Screen Shot 2012-09-27 at 8.36.29 AM.png
+
+# Additions #
+#############
+*.png
 HW3/build/pip-delete-this-directory.txt
-HW3/mleResults.png
-HW3/part3OLS.png
 HW3/src/pip-delete-this-directory.txt
 HW4/ipython_log.py.001~
+HW3/PYSMELLTAGS
+HW3/src/
