@@ -2,7 +2,7 @@ from __future__ import division
 
 import pandas as pd
 import numpy as np
-import scipy as sp
+from scipy import linalg
 import statsmodels.api as sm
 
 # Read in
@@ -38,7 +38,7 @@ def coeff_est(endog, exog):
     using b = (X'X)^-1 * X'
     """
     Q = exog.T.dot(exog)
-    A = sp.linalg.inv(Q).dot(exog.T)
+    A = linalg.inv(Q).dot(exog.T)
     b = A.dot(endog)
     return b
 
@@ -51,19 +51,20 @@ def std_errors(endog, exog):
     n = len(endog)
     k = len(exog.columns)
     Q = exog.T.dot(exog)
-    A = sp.linalg.inv(Q).dot(exog.T)
+    A = linalg.inv(Q).dot(exog.T)
     N = exog.values.dot(A)
     M = np.eye(n) - N
     e = M.dot(endog)
     sigma_sq = e.T.dot(e) * (1 / (n - k))
-    return (sigma_sq, sigma_sq * sp.linalg.inv(Q))
+    return (sigma_sq, sigma_sq * linalg.inv(Q))
+
 
 def r_squared(endog, exog):
     """
     """
     n = len(endog)
     Q = exog.T.dot(exog)
-    A = sp.linalg.inv(Q).dot(exog.T)
+    A = linalg.inv(Q).dot(exog.T)
     N = exog.values.dot(A)
     M = np.eye(n) - N
     e = M.dot(endog)
@@ -73,3 +74,50 @@ def r_squared(endog, exog):
     denom = endog.T.dot(M0).dot(endog)
     r_sqr = 1 - num / denom
     return r_sqr
+
+
+def helper(endog, exog):
+    """
+    TODO: add check for ones
+    """
+    n = len(endog)
+    k = len(exog.columns)
+    Q = exog.T.dot(exog)
+    A = linalg.inv(Q).dot(exog.T)
+    N = exog.values.dot(A)
+    M = np.eye(n) - N
+    e = M.dot(endog)
+    N = exog.values.dot(A)
+    M = np.eye(n) - N
+    num = e.T.dot(e)
+    M0 = np.eye(n) - (1 / n) * np.ones([n, n])
+    denom = endog.T.dot(M0).dot(endog)
+    return n, k, Q, A, N, M, e, N, M, num, denom
+
+
+def coeff_est(endog, A):
+    """
+    Estimate the coefficients of the regression equation, b,
+    using b = (X'X)^-1 * X'
+    """
+    b = A.dot(endog)
+    return b
+
+
+def std_errors(e, n, k, Q):
+    """
+    Non robust standard errors. V(b) = sigma^2 Q^-1, assuming
+    homoskedasticity. ASG p. 167
+    """
+    sigma_sq = e.T.dot(e) * (1 / (n - k))
+    std_err  = sigma_sq * linalg.inv(Q)
+    return (sigma_sq, std_err)
+
+
+def r_squared(num, denom):
+    """
+    """
+    r_sqr = 1 - num / denom
+    return r_sqr
+
+
