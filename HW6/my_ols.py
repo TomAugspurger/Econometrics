@@ -27,7 +27,12 @@ class my_ols:
         self.Q = dot(self.X.T, self.X)
         self.Q_inv = linalg.inv(self.X.T.dot(self.X))
         self.A = linalg.inv(self.Q).dot(self.X.T)
-        self.N = self.X.dot(self.A)
+        
+        try:
+            self.N = self.X.values.dot(self.A)
+        except:
+            self.N = self.X.dot(self.A)
+
         self.M = np.eye(self.nobs) - self.N
         XY = dot(self.X.T, self.Y)
         self.b = dot(self.Q_inv, XY)
@@ -46,6 +51,8 @@ class my_ols:
         self.R2adj = 1 - (1 - self.R2) * ((self.nobs - 1) / (self.nobs - self.ncoef))
         self.F = (self.R2 / self.df_r) / ((1 - self.R2) / self.df_e)
         self.F_p_value = 1 - stats.f.cdf(self.F, self.df_r, self.df_e)
+        self.s_sq = self.e.T.dot(self.e) / (self.nobs - self.ncoef)  # Greene p161
+
 
 if __name__ == '__main__':
     print 'hi'
