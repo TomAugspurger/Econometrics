@@ -27,7 +27,7 @@ class my_ols:
         self.Q = dot(self.X.T, self.X)
         self.Q_inv = linalg.inv(self.X.T.dot(self.X))
         self.A = linalg.inv(self.Q).dot(self.X.T)
-        
+
         try:
             self.N = self.X.values.dot(self.A)
         except:
@@ -52,6 +52,22 @@ class my_ols:
         self.F = (self.R2 / self.df_r) / ((1 - self.R2) / self.df_e)
         self.F_p_value = 1 - stats.f.cdf(self.F, self.df_r, self.df_e)
         self.s_sq = self.e.T.dot(self.e) / (self.nobs - self.ncoef)  # Greene p161
+
+    def f_test(self, R, q=None):
+        if q == None:
+            j = np.shape(R)[0]
+            q = np.zeros(j)  # Careful w/ dim here.
+            l = R.dot(self.b.T) - q
+            m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
+            r = (R.dot(self.b) - q).T
+            F = (l.dot(m).dot(r) / j)
+        else:
+            j = np.shape(R)[0]
+            l = R.dot(self.b.T) - q
+            m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
+            r = (R.dot(self.b) - q).T
+            F = (l.dot(m).dot(r) / j)
+        return F
 
 
 if __name__ == '__main__':
