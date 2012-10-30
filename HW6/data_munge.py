@@ -20,5 +20,6 @@ exog['log_gas_p'] = np.log(df.gas_p)
 exog['log_new_car_p'] = np.log(df.new_car_p)
 exog['log_used_car_p'] = np.log(df.used_car_p)
 exog = exog.rename(columns={0: 'constant'})
-df = pd.merge(endog, exog, on=None, how='outer', left_index=True, right_index=True)
+df = pd.merge(endog, exog, on=None, how='outer', left_index=True,
+    right_index=True)
 df.to_csv('CleanGreenData.csv')
