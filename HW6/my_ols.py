@@ -57,17 +57,19 @@ class my_ols:
         if q == None:
             j = np.shape(R)[0]
             q = np.zeros(j)  # Careful w/ dim here.
-            l = R.dot(self.b.T) - q
-            m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
-            r = (R.dot(self.b) - q).T
-            F = (l.dot(m).dot(r) / j)
+            self.l = R.dot(self.b.T) - q
+            self.m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
+            self.r = (R.dot(self.b) - q).T
+            self.F = (self.l.dot(self.m).dot(self.r) / j)
+            self.F_p_value = 1 - stats.f.cdf(self.F, j, self.nobs - self.ncoef)
         else:
             j = np.shape(R)[0]
-            l = R.dot(self.b.T) - q
-            m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
-            r = (R.dot(self.b) - q).T
-            F = (l.dot(m).dot(r) / j)
-        return F
+            self.l = R.dot(self.b.T) - q
+            self.m = linalg.inv(R.dot(self.s_sq * self.Q_inv).dot(R.T))
+            self.r = (R.dot(self.b) - q).T
+            self.F = (self.l.dot(self.m).dot(self.r) / j)
+            self.F_p_value = 1 - stats.f.cdf(self.F, j, self.nobs - self.ncoef)
+        return (self.F, self.F_p_value)
 
 
 if __name__ == '__main__':
