@@ -12,10 +12,10 @@ df = df[['gas', 'popn', 'gas_p', 'income', 'new_car_p',
             'used_car_p']]
 df = df[['gas', 'popn', 'gas_p', 'income', 'new_car_p', 'used_car_p']]
 
-endog = pd.DataFrame(np.log(df.gas / df.popn), columns=['log_gas_pp'])
+endog = pd.DataFrame(np.log(df.gas), columns=['log_gas_pp'])
 exog = pd.DataFrame(np.ones(len(df)))
 exog.index = df.index
-exog['log_income_pp'] = np.log(df.income / df.popn)
+exog['log_income_pp'] = np.log(df.income)
 exog['log_gas_p'] = np.log(df.gas_p)
 exog['log_new_car_p'] = np.log(df.new_car_p)
 exog['log_used_car_p'] = np.log(df.used_car_p)
