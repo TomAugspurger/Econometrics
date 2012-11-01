@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 # Read in
-df = pd.read_csv('CleanGreenData.csv', index_col=0, parse_dates=True)
+df = pd.read_csv('/Users/tom/Dropbox/Economics/Econometrics/Homework/HW6/CleanGreenData.csv', index_col=0, parse_dates=True)
 endog = df['log_gas_pp']
 exog = df[['constant', 'log_income_pp', 'log_gas_p', 'log_new_car_p',
        'log_used_car_p']]
