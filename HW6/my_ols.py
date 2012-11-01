@@ -6,6 +6,17 @@ import numpy as np
 
 
 class my_ols:
+    """
+    Class used for eistimating OLS.
+
+    Parameters
+    * Y: column vector containing the n observations of the dependent variable.
+    * X: the n x k matrix containing observed values for independent variables.
+    * Y_varname: For ease. A string.
+    * X_varnames: likewise. A string.
+    * add_constant: Bool, default True.  If false adds a col vector of 1's.
+    """
+
     def __init__(self, Y, X, Y_varname='Y', X_varnames='', add_constant=True):
         self.Y = Y
         if add_constant == True:
@@ -45,6 +56,11 @@ class my_ols:
         self.se = np.sqrt(diagonal(self.sse * self.Q_inv))  # Non robust SE
         self.t = self.b / self.se
 
+        
+        self.cov_params = self.sse * self.Q_inv
+        # S&W p. 711 - 712 Robust.
+        self.cov_r = (1 / self.nobs) * linalg.inv(self.X.T.dot(self.X) / self.nobs) * (1 / (self.nobs - self.ncoef)) * np.sum(self.X.values.dot(self.X.values.T).dot((self.M.dot(self.Y) ** 2))) * linalg.inv(self.X.T.dot(self.X) / self.nobs)
+
         # TODO: make this take optional arg for one-sided vs. default of 2
         self.p_value = (1 - stats.t.cdf(abs(self.t), self.df_e)) * 2
         self.R2 = 1 - self.e.var() / self.Y.var()
@@ -54,6 +70,10 @@ class my_ols:
         self.s_sq = self.e.T.dot(self.e) / (self.nobs - self.ncoef)  # Greene p161
 
     def f_test(self, R, q=None):
+        """
+        Pass the model (self), a restriction matrix, and the hypothesized value.
+        """
+
         if q == None:
             j = np.shape(R)[0]
             q = np.zeros(j)  # Careful w/ dim here.
