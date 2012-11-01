@@ -18,5 +18,7 @@ results.cov_HC0  # Robust Standard Error Matrix
 se = results.cov_params()  # Non-robust
 
 results.rsquared
+
+# Restriction testing coefficients on variables 4 & 5 = 0.
 R = np.array([[0, 0, 0, 1, 0], [0, 0, 0, 0, 1]])
 results.f_test(R)
