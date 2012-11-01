@@ -56,11 +56,11 @@ class my_ols:
         self.se = np.sqrt(diagonal(self.sse * self.Q_inv))  # Non robust SE
         self.t = self.b / self.se
 
-        
         self.cov_params = self.sse * self.Q_inv
         # S&W p. 711 - 712 Robust.
         self.cov_r = (1 / self.nobs) * linalg.inv(self.X.T.dot(self.X) / self.nobs) * (1 / (self.nobs - self.ncoef)) * np.sum(self.X.values.dot(self.X.values.T).dot((self.M.dot(self.Y) ** 2))) * linalg.inv(self.X.T.dot(self.X) / self.nobs)
-
+        #Or from statsmodels
+        self.cov_r0 = np.sum(self.e ** 2) * linalg.inv(self.X.values.T.dot(self.X.values)).dot(self.X.values.T).dot(self.X.values.dot(linalg.inv(self.X.values.T.dot(self.X.values))))
         # TODO: make this take optional arg for one-sided vs. default of 2
         self.p_value = (1 - stats.t.cdf(abs(self.t), self.df_e)) * 2
         self.R2 = 1 - self.e.var() / self.Y.var()
