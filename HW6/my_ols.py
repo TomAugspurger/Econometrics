@@ -15,6 +15,9 @@ class my_ols:
     * Y_varname: For ease. A string.
     * X_varnames: likewise. A string.
     * add_constant: Bool, default True.  If false adds a col vector of 1's.
+
+    Attributes
+    
     """
 
     def __init__(self, Y, X, Y_varname='Y', X_varnames='', add_constant=True):
@@ -40,9 +43,9 @@ class my_ols:
         self.A = linalg.inv(self.Q).dot(self.X.T)
 
         try:
-            self.N = self.X.values.dot(self.A)
+            self.N = dot(self.X.values, self.A)
         except:
-            self.N = self.X.dot(self.A)
+            self.N = dot(self.X, self.A)
 
         self.M = np.eye(self.nobs) - self.N
         XY = dot(self.X.T, self.Y)
@@ -57,10 +60,11 @@ class my_ols:
         self.t = self.b / self.se
 
         self.cov_params = self.sse * self.Q_inv
-        # S&W p. 711 - 712 Robust.
-        self.cov_r = (1 / self.nobs) * linalg.inv(self.X.T.dot(self.X) / self.nobs) * (1 / (self.nobs - self.ncoef)) * np.sum(self.X.values.dot(self.X.values.T).dot((self.M.dot(self.Y) ** 2))) * linalg.inv(self.X.T.dot(self.X) / self.nobs)
+        self.white_cov = dot(dot(dot(dot(self.Q_inv, self.X.T), self.e.values ** 2 * np.eye(self.nobs)), self.X), self.Q_inv)
+
         #Or from statsmodels
         self.cov_r0 = np.sum(self.e ** 2) * linalg.inv(self.X.values.T.dot(self.X.values)).dot(self.X.values.T).dot(self.X.values.dot(linalg.inv(self.X.values.T.dot(self.X.values))))
+
         # TODO: make this take optional arg for one-sided vs. default of 2
         self.p_value = (1 - stats.t.cdf(abs(self.t), self.df_e)) * 2
         self.R2 = 1 - self.e.var() / self.Y.var()
@@ -68,6 +72,9 @@ class my_ols:
         self.F = (self.R2 / self.df_r) / ((1 - self.R2) / self.df_e)
         self.F_p_value = 1 - stats.f.cdf(self.F, self.df_r, self.df_e)
         self.s_sq = self.e.T.dot(self.e) / (self.nobs - self.ncoef)  # Greene p161
+
+
+
 
     def f_test(self, R, q=None):
         """
@@ -94,3 +101,25 @@ class my_ols:
 
 if __name__ == '__main__':
     print 'hi'
+
+
+
+
+            # self.cov_r = (1 / self.nobs) * linalg.inv(self.X.T.dot(self.X) / self.nobs) * (
+        #     1 / (self.nobs - self.ncoef)) * (
+        #     np.sum(self.X.values.dot(self.X.values.T).dot((self.M.dot(self.Y) ** 2)))) * (
+        #     linalg.inv(self.X.T.dot(self.X) / self.nobs))
+
+        # self.cov_r_alt = (
+        #     np.sum(self.X.values.dot(self.X.values.T).dot((self.M.dot(self.Y) ** 2)))) * (
+        #     1 / (self.nobs - self.ncoef)) * (1 / self.nobs) * linalg.inv(self.X.T.dot(self.X) / self.nobs) .dot(
+        #     linalg.inv(self.X.T.dot(self.X) / self.nobs))
+
+        # self.cov_r_alt2 = np.sum(np.diag(self.M.dot(self.Y) ** 2)) * self.Q_inv.dot(self.X.T).dot(self.X.values).dot(self.Q_inv)
+
+        # Greene p 273 in electronic version.
+        # self.white_S0 = np.zeros([self.nobs, self.nobs])
+        # x0 = self.X.values[:, 0].reshape(self.nobs, 1)
+        # self.white_S0 = (np.dot(self.e, self.e) / self.nobs) * np.dot(x0, x0.T)
+
+
