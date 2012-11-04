@@ -21,8 +21,8 @@ np.set_printoptions(precision=4, edgeitems=6, linewidth=100)
 
 print '''
 Ex-ante it's hard to say wheter the slope for new cars should be
-positive or negative since we have these competing effects.  I would
-the price elasticity with respect to new cars would be negative due
+positive or negative since we have these competing effects.  I would guess
+that the price elasticity with respect to new cars would be negative due
 to the increased age of the car fleet, and from that the decreased
 average efficiency.
 '''

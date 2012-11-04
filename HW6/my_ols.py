@@ -17,6 +17,26 @@ class my_ols:
     * add_constant: Bool, default True.  If false adds a col vector of 1's.
 
     Attributes
+    nobs: number of observations
+    ncoef: number of coefficients (includes the constant)
+    Q_inv: (X'X)^-1
+    A: Q_inv * X'
+    N: XA
+    M: I - N; Residual maker
+    b: Q^(-1)XY; Estimate of coefficients.
+    df_e: Degrees of freedom for the regression. n - # coeffs.
+    df_r: # coeffs - 1
+    e: residuals. y - y-hat
+    sse: sum of square errors.
+    se: standard error of regrssion (estimate)
+    t: b / se
+    p_value: using student's t. Two sided
+    cov_params: Homoskedastic only cov matrix. sse * Q^(-1)
+    white_cov: White covariance matrix.  Use X'e*eX as an estimate
+        for sigma, the true covarance.
+        (X'X)^(-1)X'e**2X(X'X)^(-1).  e**2 is an (n x n) matrix with
+        nonzeros e**2 on the main diagonal, zero off-diagonal.
+    
 
     """
 
@@ -38,14 +58,13 @@ class my_ols:
         self.nobs = self.Y.shape[0]
         self.ncoef = self.X.shape[1]
 
-        Q = dot(self.X.T, self.X)
         self.Q_inv = linalg.inv(self.X.T.dot(self.X))
-        self.A = linalg.inv(Q).dot(self.X.T)
+        self.A = dot(self.Q_inv, self.X.T)
 
         try:
-            self.N = dot(self.X.values, self.A)
-        except:
             self.N = dot(self.X, self.A)
+        except:
+            self.N = dot(self.X.values, self.A)
 
         self.M = np.eye(self.nobs) - self.N
         XY = dot(self.X.T, self.Y)
