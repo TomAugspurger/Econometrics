@@ -16,7 +16,6 @@ linear_results = linear_model.fit()
 probit_results = probit_model.fit()
 logit_results = logit_model.fit()
 
-
 # Part a
 linear_results.params
 
