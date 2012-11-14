@@ -1,6 +1,6 @@
 from __future__ import division
 
-import from math import ceil
+from math import ceil
 import pandas as pd
 import statsmodels.api as sm
 
