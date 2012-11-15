@@ -9,9 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-"""
-cd /Users/tom/Dropbox/Economics/Econometrics/Homework/HW3
-"""
+
+os.chdir('/Users/tom/Dropbox/Economics/Econometrics/Homework/HW3')
+
 
 growthData = sm.iolib.foreign.genfromdta('Growth.dta')
 growthData = sm.add_constant(growthData, prepend=True)
