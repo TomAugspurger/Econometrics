@@ -1,0 +1,29 @@
+\usepackage{booktabs}
+\usepackage{dcolumn}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l D{.}{.}{3.5} @{}}
+\toprule
+            & \multicolumn{1}{c}{Model 1} \\
+\midrule
+(Intercept) & -0.37      \\
+            & (0.57)     \\
+tradeshare  & 2.33^{***} \\
+            & (0.73)     \\
+yearsschool & 0.25^{***} \\
+            & (0.08)     \\
+\midrule
+R$^2$       & 0.24       \\
+Adj. R$^2$  & 0.21       \\
+Num. obs.   & 65         \\
+\bottomrule
+\vspace{-2mm}\\
+\multicolumn{2}{l}{\textsuperscript{***}$p<0.01$, 
+  \textsuperscript{**}$p<0.05$, 
+  \textsuperscript{*}$p<0.1$}
+\end{tabular}
+\end{center}
+\caption{Statistical models}
+\label{table:coefficients}
+\end{table}
