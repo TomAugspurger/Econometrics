@@ -89,4 +89,3 @@ exog_f = df[['const', 'nearc4', 'smsa66', 'reg661',
 model_f = sm.OLS(endog_f, exog_f)
 results_f = model_f.fit()
 print(results_f.summary())
-
